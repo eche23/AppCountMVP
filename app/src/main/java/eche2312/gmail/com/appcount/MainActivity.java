@@ -12,6 +12,7 @@ public class MainActivity extends Activity {
     //Declaramos los atributos.
     private TextView pantalla;
     private Button botonMas;
+    private Button botonMenos;
     private int contador;
 
     //Creamos la clase para escuchar al boton.
@@ -49,10 +50,20 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //Hacemos un log para mostrar en consola que la aplicacion esta arrancando.
-                Log.d("MainActivity", "boton pulsado");
+                Log.d("MainActivity", "boton + pulsado");
 
                 //Indicamos que aumente el valor de la pantalla al pusar el boton +.
                 contador++;
+                pantalla.setText("" + contador);
+            }
+        });
+
+        botonMenos = findViewById(R.id.button3);
+        botonMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("MainActivity", "boton + pulsado");
+                contador--;
                 pantalla.setText("" + contador);
             }
         });
