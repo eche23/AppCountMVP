@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="eche2312.gmail.com.appcount.MainActivity">
+    tools:context="eche2312.gmail.com.appcount.vista.Vista">
 
     <LinearLayout
         android:layout_width="match_parent"
