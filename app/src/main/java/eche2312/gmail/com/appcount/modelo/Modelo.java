@@ -8,7 +8,7 @@ import eche2312.gmail.com.appcount.presentador.Presentador;
 
 public class Modelo implements IModelo {
 
-   private Presentador presentador;
+
    private int contador;
 
    public Modelo(){
@@ -17,14 +17,17 @@ public class Modelo implements IModelo {
 
 
     @Override
-    public int sumar() {
-        int resultado = contador++;
-        return resultado;
+    public void sumar() {
+        contador++;
+
     }
 
     @Override
-    public int restar() {
-        int resultado = contador--;
-        return resultado;
+    public void restar() {
+        contador--;
+    }
+
+    public int getContador(){
+       return contador;
     }
 }

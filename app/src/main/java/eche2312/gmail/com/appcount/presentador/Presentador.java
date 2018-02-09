@@ -10,17 +10,26 @@ import eche2312.gmail.com.appcount.vista.Vista;
 public class Presentador implements IPresentador {
 
     private Modelo modelo;
-    private Vista vista;
 
-    @Override
-    public int sumar() {
-        int resultado = modelo.sumar();
-        return resultado;
+
+    public Presentador(){
+        modelo = new Modelo();
+
     }
 
     @Override
-    public int restar() {
-        int resultado = modelo.restar();
-        return resultado;
+    public void sumar() {
+        modelo.sumar();
+
+    }
+
+    @Override
+    public void restar() {
+        modelo.restar();
+
+    }
+
+    public int getContador(){
+        return modelo.getContador();
     }
 }

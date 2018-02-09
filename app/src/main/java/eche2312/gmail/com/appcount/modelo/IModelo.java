@@ -6,8 +6,8 @@ package eche2312.gmail.com.appcount.modelo;
 
 interface IModelo {
 
-    public int sumar();
+    public void sumar();
 
-    public int restar();
+    public void restar();
 
 }

@@ -6,8 +6,5 @@ package eche2312.gmail.com.appcount.vista;
 
 interface IVista {
 
-    public void sumar();
-
-    public void restar();
 
 }
