@@ -60,7 +60,7 @@ public class Vista extends Activity implements IVista{
                 Log.d("Vista", "boton + pulsado");
 
                 //Indicamos que aumente el valor de la pantalla al pusar el boton +.
-                presentador.sumar();
+                presentador.incrementar();
                 pantalla.setText("" + presentador.getContador());
             }
         });
@@ -69,7 +69,7 @@ public class Vista extends Activity implements IVista{
             @Override
             public void onClick(View v) {
                 Log.d("Vista", "boton + pulsado");
-                presentador.restar();
+                presentador.decrementar();
                 pantalla.setText("" + presentador.getContador());
             }
         });
