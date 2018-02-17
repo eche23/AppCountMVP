@@ -17,7 +17,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import eche2312.gmail.com.appcount.vista.Vista;
+import eche2312.gmail.com.appcount.view.MainView;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -28,10 +28,10 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class VistaTest01 {
+public class MainViewTest01 {
 
     @Rule
-    public ActivityTestRule<Vista> mActivityTestRule = new ActivityTestRule<>(Vista.class);
+    public ActivityTestRule<MainView> mActivityTestRule = new ActivityTestRule<>(MainView.class);
 
     @Test
     public void mainActivityTest01() {

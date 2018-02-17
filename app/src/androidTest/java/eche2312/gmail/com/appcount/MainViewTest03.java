@@ -17,46 +17,54 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import eche2312.gmail.com.appcount.vista.Vista;
+import eche2312.gmail.com.appcount.view.MainView;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class VistaTest02 {
+public class MainViewTest03 {
 
     @Rule
-    public ActivityTestRule<Vista> mActivityTestRule = new ActivityTestRule<>(Vista.class);
+    public ActivityTestRule<MainView> mActivityTestRule = new ActivityTestRule<>(MainView.class);
 
     @Test
-    public void mainActivityTest02() {
+    public void mainActivityTest03() {
         ViewInteraction button = onView(
-                allOf(withId(R.id.button2), withText("+"),
+                allOf(withId(R.id.button2),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.support.constraint.ConstraintLayout")),
+                                        IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         0),
                                 1),
                         isDisplayed()));
         button.perform(click());
 
         ViewInteraction button2 = onView(
-                allOf(withId(R.id.button2), withText("+"),
+                allOf(withId(R.id.button2),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.support.constraint.ConstraintLayout")),
+                                        IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
                                         0),
                                 1),
                         isDisplayed()));
         button2.perform(click());
+
+        ViewInteraction button3 = onView(
+                allOf(withId(R.id.button3),
+                        childAtPosition(
+                                childAtPosition(
+                                        IsInstanceOf.<View>instanceOf(android.view.ViewGroup.class),
+                                        0),
+                                2),
+                        isDisplayed()));
+        button3.perform(click());
 
         ViewInteraction textView = onView(
                 allOf(withId(R.id.textView),
@@ -66,7 +74,7 @@ public class VistaTest02 {
                                         0),
                                 0),
                         isDisplayed()));
-        textView.check(matches(withText("2")));
+        textView.check(matches(withText("1")));
 
     }
 
