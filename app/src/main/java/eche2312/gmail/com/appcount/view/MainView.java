@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import eche2312.gmail.com.appcount.IMain;
 import eche2312.gmail.com.appcount.R;
-import eche2312.gmail.com.appcount.mediator.MediatorApp;
-import eche2312.gmail.com.appcount.presenter.MainPresenter;
+import eche2312.gmail.com.appcount.mediator.IMediator;
+
 
 public class MainView extends Activity implements IMain.PresenterToView {
 
@@ -19,11 +19,10 @@ public class MainView extends Activity implements IMain.PresenterToView {
     private TextView pantalla;
     private Button botonMas;
     private Button botonMenos;
+    private Button botonUlpgc;
 
 
     protected final String TAG = this.getClass().getSimpleName();
-
-
 
     //Creamos la clase para escuchar al boton.
 
@@ -51,8 +50,8 @@ public class MainView extends Activity implements IMain.PresenterToView {
         //Indicamos que nos muestre el valor 0 en la pantalla.
         pantalla = findViewById(R.id.textView);
 
-        final MediatorApp mediator = (MediatorApp) getApplication();
-        final MainPresenter mainPresenter = mediator.getPresenter(this);
+        final IMediator mediator = (IMediator) getApplication();
+        final IMain.ViewToPresenter mainPresenter = mediator.getPresenter(this);
 
         //mainPresenter = new MainPresenter();
         pantalla.setText(mainPresenter.getTextToDisplay());

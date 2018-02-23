@@ -7,8 +7,7 @@ import android.util.Log;
 import eche2312.gmail.com.appcount.IMain;
 import eche2312.gmail.com.appcount.mediator.IMediator;
 import eche2312.gmail.com.appcount.mediator.IMediator.Navigation;
-import eche2312.gmail.com.appcount.mediator.MediatorApp;
-import eche2312.gmail.com.appcount.model.MainModel;
+
 import eche2312.gmail.com.appcount.view.MainView;
 
 /**
@@ -18,16 +17,16 @@ import eche2312.gmail.com.appcount.view.MainView;
 public class MainPresenter extends MainView implements IMain.ViewToPresenter, IMain.ModelToPresenter, IMain.AppCountTo, IMain.ToAppCount {
 
     protected final String TAG = this.getClass().getSimpleName();
-    private MainModel mainModel;
-    private MainView mainView;
-    private MediatorApp mediator;
+    private IMain.PresenterToModel mainModel;
+    private IMain.PresenterToView mainView;
+    private IMediator mediator;
     private boolean buttonClicked;
 
 
-    public MainPresenter(MediatorApp mediator, MainModel mainModel, MainView mainView){
+    public MainPresenter(IMediator mediator, IMain.PresenterToModel model, IMain.PresenterToView view){
         this.mediator = mediator;
-        this.mainModel = mainModel;
-        this.mainView = mainView;
+        this.mainModel = model;
+        this.mainView = view;
 
     }
 

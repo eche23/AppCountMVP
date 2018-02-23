@@ -14,7 +14,7 @@ import eche2312.gmail.com.appcount.view.MainView;
  * Created by eched on 15/02/2018.
  */
 
-public class MediatorApp extends Application implements IMediator.Lifecycle, IMediator.Navigation {
+public class MediatorApp extends Application implements IMediator.Lifecycle, IMediator.Navigation, IMediator {
 
     protected final String TAG = this.getClass().getSimpleName();
     private MainPresenter mainPresenter;
@@ -38,10 +38,11 @@ public class MediatorApp extends Application implements IMediator.Lifecycle, IMe
     }
 
 
-    public MainPresenter getPresenter(MainView mainView) {
+    @Override
+    public MainPresenter getPresenter(MainView view) {
         if(mainPresenter == null){
             mainModel = new MainModel();
-            mainPresenter = new MainPresenter(this, mainModel, mainView);
+            mainPresenter = new MainPresenter(this, mainModel, view);
         }
 
         return mainPresenter;

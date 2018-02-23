@@ -23,7 +23,6 @@ public class MainModel implements IMain.PresenterToModel {
     @Override
     public void incrementar() {
         contador++;
-
     }
 
     @Override
@@ -42,7 +41,6 @@ public class MainModel implements IMain.PresenterToModel {
             return true;
         }
         return false;
-
     }
 
     @Override
